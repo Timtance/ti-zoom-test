@@ -10,6 +10,9 @@
 ## Demo
 [Demo](https://github.com/Timtance/ti-zoom-test/tree/main/demo/index.html)
 
+![gif of the demo being used](https://github.com/Timtance/ti-zoom-test/tree/main/demo/demo.gif)
+
+
 ### ti-element-vue-test install Ti-Element-Vue 
 ```
 npm install ti-zoom
