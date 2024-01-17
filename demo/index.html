@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>canvas放大镜</title>
+  <script type="text/javascript" src="./../lib/ti-zoom.umd.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+<div style="display: flex;"><div style=" width: 400px; margin: 20px;"><img src="https://img0.baidu.com/it/u=538006846,899077436&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=322" style="width: auto; height: auto; max-width: 100%; max-height: 100%;"></div>
+<div style="position: absolute;left: 50%;top: 20%;zoom:1.27"><img zoom="1.27" src="https://img0.baidu.com/it/u=538006846,899077436&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=322"></div></div>
+<script>
+var tuiZoom = new tuiZoom("targetDiv")
+function onMouseOverElement(e){
+  if(e.currentTarget.attributes.zoom){
+    tuiZoom.setBoxObjZoom(Number(e.currentTarget.attributes.zoom.value))
+  }else{
+    tuiZoom.setBoxObjZoom(1)
+  }
+  tuiZoom.setTarget(e.currentTarget)
+}
+var imgs = document.getElementsByTagName("img")
+Array.from(imgs).forEach(function(element){
+  element.onmouseover = onMouseOverElement
+})
+setTimeout(function(){
+  tuiZoom.setZoomRate(0.5)
+}, 3000)
+setTimeout(function(){
+  tuiZoom.setZoomStyle({borderColor: 'red'})
+}, 6000)
+setTimeout(function(){
+  tuiZoom.destroy()
+  Array.from(imgs).forEach(function(element){
+    element.onmouseover = null
+  })
+}, 10000)
+
+</script>
+</body>
+</html>
