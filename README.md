@@ -7,6 +7,9 @@
 - 该组件库提供放大镜效果的插件，帮助用户清晰查看细节。
 - 该组件库的放大镜效果插件提供了高质量、高可定制性的细节查看体验。
 
+## Demo
+[Demo](https://github.com/Timtance/ti-zoom-test/tree/main/demo/index.html)
+
 ### ti-element-vue-test install Ti-Element-Vue 
 ```
 npm install ti-zoom
