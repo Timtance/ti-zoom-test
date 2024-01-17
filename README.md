@@ -13,7 +13,7 @@
 ![gif of the demo being used](./demo/demo.gif)
 
 
-### ti-element-vue-test install Ti-Element-Vue 
+### install
 ```
 npm install ti-zoom
 // or
