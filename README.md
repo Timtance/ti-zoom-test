@@ -125,15 +125,25 @@ export default ZoomImage;
 </html>
 ```
 
-## TiElement
+## TiZoom
 
 - TiZoom Readme.md [Chinese](https://github.com/Timtance) | [English](https://github.com/Timtance)
+
+## TiZoom Logs
+- 1.1.0 add zoom Module and inner functions to moving object
+- 1.2.0 add public function ["setBoxObjZoom", "setTarget", "setZoomRate", "destroy", "setZoomStyle"]
 
 
 ### Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/)
 
+### Build a process for submitting npm projects
+- cd project's name file
+- npm init
+- npm install --save-dev @babel/core@7.16.7 @babel/preset-env@7.16.5 @rollup/plugin-babel@5.3.0 rollup@2.79.1 rollup-plugin-terser@7.0.2
+- "build": "rollup -c" ( configure package.json )
+- rollup.config.js ( Create rollup configuration file )
 
 ### Follow
 <img src="https://raw.githubusercontent.com/Timtance/tuijs/HEAD/follow.jpg" width="100px">
