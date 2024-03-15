@@ -29,7 +29,7 @@ yarn add ti-zoom
 </template>
 
 <script>
-import 'ti-zoom'; // 导入 ti-zoom 库
+import 'ti-zoom/lib/ti-zoom.umd.js'; // 导入 ti-zoom 库
 
 export default {
   data() {
@@ -40,7 +40,10 @@ export default {
   mounted() {
     // 在组件挂载后，初始化 ti-zoom
     // this.$refs.zoomImage 是 img 元素的引用
-    new TiZoom(this.$refs.zoomImage);
+      setTimeout(() => {
+        var t = new window.tuiZoom();
+        t.setTarget(this.$refs.zoomImage);
+      }, 1);
   },
 };
 </script>
@@ -50,28 +53,29 @@ export default {
 ```bash
 <template>
   <div>
-    <img ref="zoomImage" :src="imageSrc" alt="Image" />
+    <img ref="zoomImage" src="../assets/logo.png" alt="Image" />
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue';
-import 'ti-zoom'; // 导入 ti-zoom 库
+import 'ti-zoom/lib/ti-zoom.umd.js'; // 导入 ti-zoom 库
 
 export default {
   setup() {
     const zoomImage = ref(null);
-    const imageSrc = 'path/to/your/image.jpg';
 
     onMounted(() => {
       // 在组件挂载后，初始化 ti-zoom
       // zoomImage.value 是 img 元素的引用
-      new TiZoom(zoomImage.value);
+      setTimeout(() => {
+        var t = new window.tuiZoom();
+        t.setTarget(zoomImage.value);
+      }, 1);
     });
 
     return {
-      zoomImage,
-      imageSrc,
+      zoomImage
     };
   },
 };
@@ -81,7 +85,7 @@ export default {
 ### 在 React 中使用示例：
 ```bash
 import { useRef, useEffect } from 'react';
-import 'ti-zoom'; // 导入 ti-zoom 库
+import 'ti-zoom/lib/ti-zoom.umd.js'; // 导入 ti-zoom 库
 
 function ZoomImage(props) {
   const zoomImageRef = useRef(null);
@@ -90,7 +94,10 @@ function ZoomImage(props) {
   useEffect(() => {
     // 在组件挂载后，初始化 ti-zoom
     // zoomImageRef.current 是 img 元素的引用
-    new TiZoom(zoomImageRef.current);
+      setTimeout(() => {
+        var t = new window.tuiZoom();
+        t.setTarget(zoomImageRef.current);
+      }, 1);
   }, []);
 
   return (
@@ -118,8 +125,11 @@ export default ZoomImage;
     <script src="path/to/ti-zoom.js"></script>
     <script>
       // 在页面加载后，初始化 ti-zoom
-      const zoomImage = document.getElementById('zoomImage');
-      new TiZoom(zoomImage);
+      setTimeout(() => {
+        const zoomImage = document.getElementById('zoomImage');
+        var tuiZoom = new tuiZoom("zoomImage")
+        tuiZoom.setTarget(zoomImage)
+      })
     </script>
   </body>
 </html>
